@@ -24,4 +24,15 @@ router.post('/searchone',function(req, res, next) {
 	})
 });
 
+router.post('/searchinfo',function(req, res, next) {
+	var materialnum = req.body.materialnum;
+	console.log(materialnum)
+	var sql =`select * from materials where materialnum='${materialnum}'`;
+	//var sql =`select * from materials where categorynum=3`;
+	console.log(sql);
+	db.query(sql,[],function(results, fields) {
+		res.send(results);
+	})
+});
+
 module.exports = router;

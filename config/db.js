@@ -12,7 +12,7 @@ module.exports = {
 					if(err){
 						console.error(err)
 					}else{
-            			callback && callback(JSON.parse(JSON.stringify(results)), JSON.parse(JSON.stringify(fields)));
+            			callback && callback(JSON.stringify(results),JSON.stringify(fields));
 					}
 					connection.release()
 				})
